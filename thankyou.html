@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AZ Service</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m2">
+        </div>
+        <div class="col s12 m8">
+          <div class="card hoverable">
+            <div class="card-content blue-grey darken-4 white-text">
+              <span class="card-title amber-text darken-3-text center"><b>Thank You For Submit Inquiry</b></span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+        </div>
+    </div>
+  </div>
+  <h5 class="center black-text">You will redirect to my home page</h5>
+    <!-- HTML meta refresh URL redirection -->
+    <META HTTP-EQUIV="refresh" CONTENT="5;URL=http://www.azservice.in">
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });</script>
+  <script type="text/javascript">
+<!--  form error message-->  
+         var createAllErrors = function() {
+             var form = $(this),
+                 errorList = $("ul.errorMessages", form);
+
+             var showAllErrorMessages = function() {
+                 errorList.empty();
+
+                 // Find all invalid fields within the form.
+                 var invalidFields = form.find(":invalid").each(function(index, node) {
+
+                     // Find the field's corresponding label
+                     var label = $("label[for=" + node.id + "] "),
+                         // Opera incorrectly does not fill the validationMessage property.
+                         message = node.validationMessage || 'Invalid value.';
+
+                     errorList
+                         .show()
+                         .append("<li><span>" + label.html() + "<\/span> " + message + "<\/li>");
+                 });
+             };
+
+             // Support Safari
+             form.on("submit", function(event) {
+                 if (this.checkValidity && !this.checkValidity()) {
+                     $(this).find(":invalid").first().focus();
+                     event.preventDefault();
+                 }
+             });
+
+             $("input[type=submit], button:not([type=button])", form)
+                 .on("click", showAllErrorMessages);
+
+             $("input", form).on("keypress", function(event) {
+                 var type = $(this).attr("type");
+                 if (/date|email|month|number|search|tel|text|time|url|week/.test(type) &&
+                     event.keyCode == 13) {
+                     showAllErrorMessages();
+                 }
+             });
+         };
+  </script> 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('input#input_text, textarea#textarea2').characterCounter();
+  });
+</script>
+  </body>
+</html>
